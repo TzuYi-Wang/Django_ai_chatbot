@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 import openai
+from django.contrib.auth.models import AnonymousUser
 
 from django.contrib import auth
 from django.contrib.auth.models import User
@@ -26,6 +27,10 @@ def ask_openai(message):
 
 # Create your views here.
 def chatbot(request):
+    if isinstance(request.user, AnonymousUser) or not request.user.is_authenticated:
+        # 如果用戶是匿名的或未認證，重定向到登錄頁面
+        return redirect('login')  # 假設你有一個名為 'login' 的路由
+    
     chats = Chat.objects.filter(user=request.user)
 
     if request.method == 'POST':
