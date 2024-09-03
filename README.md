@@ -1,5 +1,6 @@
 # chatbot
 
-#build: 
+```bash
+Build:
 cd /django_chatbot_main/django_chatbot
-python3 manage.py runserver
+python manage.py runserver
