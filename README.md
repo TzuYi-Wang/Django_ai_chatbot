@@ -12,7 +12,8 @@
 - **Django**：用於構建後端服務和處理請求。
 - **OpenAI API**：提供聊天機器人的智能回應。
 - **Python**：開發語言。
-- **HTML/CSS**：前端界面。
+- **HTML**：前端界面。
+- **SQLite**
 
 ## Build:
 - cd /django_chatbot_main/django_chatbot
